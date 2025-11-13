@@ -3,12 +3,15 @@ backend:
   repo: smile-wifi/SmileNews
   branch: main
   open_authoring: true
-  base_url: https://auth.decapcms.org   # ✅ uses free hosted OAuth
+  base_url: https://auth.decapcms.org   # uses free hosted OAuth
   auth_endpoint: auth
   client_id: your-client-id-here        # 👈 replace with your GitHub OAuth Client ID
 
 media_folder: "images/uploads"
 public_folder: "/images/uploads"
+
+# 🚩 FIX APPLIED HERE 🚩
+publish_mode: editorial_workflow
 
 collections:
   - name: "news"

@@ -1,91 +1,132 @@
+/* ============================================================
+   SmileNews - Basic Styles
+   Works on both mobile and desktop
+   ============================================================ */
+
 body {
+  font-family: Arial, Helvetica, sans-serif;
   margin: 0;
-  font-family: system-ui, Arial, sans-serif;
-  background: #f7f9fb;
+  padding: 0;
+  background: #f4f6f8;
   color: #222;
 }
 
-/* Header with 40px padding */
 header {
-  background: #0a0f1a;
-  color: white;
-  padding: 40px;
+  background: linear-gradient(90deg, #0077b6, #00b4d8);
+  color: #fff;
+  padding: 1rem;
   text-align: center;
 }
+
 header h1 {
   margin: 0;
-  font-size: 2rem;
+  font-size: 1.8rem;
 }
+
+nav {
+  margin-top: 0.5rem;
+}
+
 nav a {
-  color: #00d1b2;
+  color: #fff;
   text-decoration: none;
   margin: 0 10px;
+  font-weight: bold;
 }
+
 nav a:hover {
   text-decoration: underline;
 }
 
-/* News grid */
+main {
+  max-width: 900px;
+  margin: 1rem auto;
+  padding: 1rem;
+}
+
 .news-grid {
   display: grid;
-  gap: 30px;
-  max-width: 1000px;
-  margin: 40px auto;
-  padding: 0 20px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
 }
+
 article {
-  background: white;
+  background: #fff;
   border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
 }
-.media img, .media video {
+
+article img,
+article video {
   width: 100%;
   height: auto;
   display: block;
+  border-bottom: 1px solid #eee;
 }
-.content {
-  padding: 20px;
+
+article .content {
+  padding: 1rem;
 }
-.content h2 {
-  margin-top: 0;
-  font-size: 1.4rem;
+
+article .content h2 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.2rem;
 }
-.content small {
+
+article .content small {
   color: #666;
 }
-.links {
-  margin-top: 15px;
+
+article .content p {
+  margin-top: 0.5rem;
+  line-height: 1.5;
 }
+
+.links {
+  margin-top: 1rem;
+}
+
 .links ul {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
+
 .links li {
-  margin-bottom: 5px;
+  margin-bottom: 0.3rem;
 }
+
 .links a {
-  color: #0077cc;
+  color: #0077b6;
   text-decoration: none;
 }
+
 .links a:hover {
   text-decoration: underline;
 }
 
-/* Footer */
 footer {
+  background: #0077b6;
+  color: #fff;
   text-align: center;
-  background: #0a0f1a;
-  color: white;
-  padding: 20px;
+  padding: 1rem;
+  margin-top: 2rem;
+  font-size: 0.9rem;
 }
 
-/* Responsive */
-@media (max-width: 700px) {
-  .news-grid {
-    grid-template-columns: 1fr;
-  }
+/* Mobile adjustments */
+@media (max-width: 600px) {
   header h1 {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
+  }
+  nav a {
+    display: inline-block;
+    margin: 4px;
+  }
+  article .content h2 {
+    font-size: 1rem;
   }
 }

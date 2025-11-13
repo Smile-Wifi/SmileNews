@@ -1,53 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>News CMS</title>
-  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
-  <script>
-    window.CMS_MANUAL_INIT = true;
-    document.addEventListener("DOMContentLoaded", function() {
-      CMS.init({
-        config: {
-          backend: {
-            name: "github",
-            repo: "repo: smile-wifi/SmileNews", // 👈 change this
-            branch: "main",
-            open_authoring: true
-          },
-          media_folder: "images/uploads",
-          public_folder: "/images/uploads",
-          collections: [
-            {
-              name: "news",
-              label: "News Articles",
-              folder: "news",
-              create: true,
-              slug: "{{year}}-{{month}}-{{day}}-{{slug}}",
-              fields: [
-                { label: "Title", name: "title", widget: "string" },
-                { label: "Date", name: "date", widget: "datetime" },
-                { label: "Media Type", name: "media_type", widget: "select", options: ["image", "video"], default: "image" },
-                { label: "Media URL", name: "media_url", widget: "image" },
-                { label: "Article Body", name: "body", widget: "markdown" },
-                {
-                  label: "Related Links",
-                  name: "links",
-                  widget: "list",
-                  fields: [
-                    { label: "Label", name: "label", widget: "string" },
-                    { label: "URL", name: "url", widget: "string" }
-                  ]
-                }
-              ]
-            }
-          ]
-        }
-      });
-    });
-  </script>
+  <meta charset="UTF-8">
+  <title>News CMS</title>
+  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+  <script>
+    window.CMS_MANUAL_INIT = true;
+    document.addEventListener("DOMContentLoaded", function() {
+      CMS.init({
+        config: {
+          backend: {
+            name: "github",
+            repo: "smile-wifi/SmileNews",
+            branch: "main",
+            open_authoring: true
+          },
+          media_folder: "images/uploads",
+          public_folder: "/images/uploads",
+          collections: [
+            {
+              name: "news",
+              label: "News Articles",
+              folder: "news",
+              create: true,
+              slug: "{{year}}-{{month}}-{{day}}-{{slug}}",
+              fields: [
+                { label: "Title", name: "title", widget: "string" },
+                { label: "Date", name: "date", widget: "datetime" },
+                { label: "Media Type", name: "media_type", widget: "select", options: ["image", "video"], default: "image" },
+                { label: "Media URL", name: "media_url", widget: "image" },
+                { label: "Article Body", name: "body", widget: "markdown" },
+                {
+                  label: "Related Links",
+                  name: "links",
+                  widget: "list",
+                  fields: [
+                    { label: "Label", name: "label", widget: "string" },
+                    { label: "URL", name: "url", widget: "string" }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      });
+    });
+  </script>
 </head>
 <body>
-  <h2 style="text-align:center;font-family:sans-serif;">Loading News CMS...</h2>
+  <h2 style="text-align:center;font-family:sans-serif;">Loading News CMS...</h2>
 </body>
 </html>

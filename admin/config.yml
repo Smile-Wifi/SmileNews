@@ -1,33 +1,22 @@
 backend:
   name: github
-  repo: smile-wifi/SmileNews
+  repo: smile-wifi/smile-wifi.github.io # Your GitHub repo name
   branch: main
-  open_authoring: true
-  base_url: https://auth.decapcms.com   # uses free hosted OAuth
-  auth_endpoint: auth
-  client_id: your-client-id-here        # 👈 replace with your GitHub OAuth Client ID
+  base_url: https://decapcms-oauth.vercel.app
+  auth_endpoint: /auth
+  site_domain: smile-wifi.github.io
 
 media_folder: "images/uploads"
 public_folder: "/images/uploads"
 
-# 🚩 FIX APPLIED HERE 🚩
-publish_mode: editorial_workflow
-
 collections:
   - name: "news"
-    label: "News Articles"
+    label: "News"
     folder: "news"
     create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    slug: "{{slug}}"
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Date", name: "date", widget: "datetime" }
-      - { label: "Media Type", name: "media_type", widget: "select", options: ["image", "video"], default: "image" }
-      - { label: "Media URL", name: "media_url", widget: "image" }
-      - { label: "Article Body", name: "body", widget: "markdown" }
-      - label: "Related Links"
-        name: "links"
-        widget: "list"
-        fields:
-          - { label: "Label", name: "label", widget: "string" }
-          - { label: "URL", name: "url", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Image", name: "image", widget: "image" }

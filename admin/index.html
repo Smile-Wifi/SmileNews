@@ -2,13 +2,18 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Admin | News CMS</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SmileNews Admin</title>
+
+    <!-- Load Decap CMS -->
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
   </head>
   <body>
     <script>
-      CMS.init();
+      // Explicitly load config from your subpath
+      CMS.init({
+        config: 'https://smile-wifi.github.io/SmileNews/admin/config.yml'
+      });
     </script>
   </body>
 </html>
